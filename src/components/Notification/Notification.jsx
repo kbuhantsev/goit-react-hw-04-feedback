@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Notification({ message }) {
-  return <span style={{ fontSize: '18px' }}>{message}</span>;
+  return <p style={{ fontSize: '18px' }}>{message}</p>;
 }
 
 Notification.propTypes = { message: PropTypes.string };
