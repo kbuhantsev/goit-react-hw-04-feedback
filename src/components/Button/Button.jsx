@@ -3,7 +3,7 @@ import React from 'react';
 import { Button as ButtonStyle } from './Button.styled';
 function Button({ title, onButtonClick, action }) {
   return (
-    <ButtonStyle type="button" onClick={onButtonClick} data-action={action}>
+    <ButtonStyle type="button" onClick={onButtonClick} name={action}>
       {title}
     </ButtonStyle>
   );

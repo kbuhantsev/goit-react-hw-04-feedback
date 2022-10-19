@@ -9,6 +9,7 @@ function FeedbackOptions({ onButtonClick, buttons }) {
     <Box gridGap="10px">
       {buttons.map(button => (
         <Button
+          key={button}
           title={capitalize(button)}
           onButtonClick={onButtonClick}
           action={button}
