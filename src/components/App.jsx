@@ -22,12 +22,9 @@ export default function App() {
     return Object.values(state).reduce((acc, curr) => acc + curr, 0);
   };
 
-  const countPositiveFeedbackPercentage = total => {
-    return Math.round((state.good * 100) / total);
+  const countPositiveFeedbackPercentage = () => {
+    return Math.round((state.good * 100) / countTotalFeedback());
   };
-
-  const total = countTotalFeedback();
-  const positivePercentage = countPositiveFeedbackPercentage(total);
 
   return (
     <>
@@ -39,13 +36,13 @@ export default function App() {
         />
       </Section>
       <Section title="Statistics">
-        {total ? (
+        {countTotalFeedback() ? (
           <Statistics
             good={state.good}
             neutral={state.neutral}
             bad={state.bad}
-            total={total}
-            positivePercentage={positivePercentage}
+            total={countTotalFeedback()}
+            positivePercentage={countPositiveFeedbackPercentage()}
           />
         ) : (
           <Notification message="There is no feedback" />
